@@ -1,0 +1,11 @@
+1.
+find . -name "*.zip" -exec unzip -d obrazy/wypakowane {} \;
+
+2.
+for f in *.png; do convert "$f" "${f%}.jpg"; done
+
+3.
+rm *.png
+
+4.
+for f in *.jpg; do magick $f -resize x720 -density 96 -units PixelsPerInch "$f"; done
