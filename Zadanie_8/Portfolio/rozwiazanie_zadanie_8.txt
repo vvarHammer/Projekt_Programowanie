@@ -1,0 +1,7 @@
+1.
+for f in *.jpg; do
+magick "$f" -gravity south -background white -splice 0x40 -fill black -pointsize 20 -annotate +0+5 "$f" "$f"
+done
+
+2.
+montage *.jpg -tile 2x4 -geometry +10+10 portfolio.pdf
